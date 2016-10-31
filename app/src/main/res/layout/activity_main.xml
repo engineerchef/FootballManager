@@ -118,7 +118,7 @@
                 android:paddingLeft="0dp"
                 android:paddingStart="45dp"
                 android:text="@string/team_a_penalty"
-                android:textColor="#000000" />
+                android:textColor="#ff0000" />
 
             <Button
                 style="@style/CustomButtonStyle"
@@ -235,7 +235,7 @@
                 android:paddingLeft="0dp"
                 android:paddingStart="45dp"
                 android:text="@string/team_b_penalty"
-                android:textColor="#000000" />
+                android:textColor="#ff0000" />
 
             <Button
                 style="@style/CustomButtonStyle"
