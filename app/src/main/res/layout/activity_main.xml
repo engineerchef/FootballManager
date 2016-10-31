@@ -4,27 +4,27 @@
     android:id="@+id/all_items"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_light">
+    android:background="@android:color/background_light"
+    tools:context="com.example.android.courtcounter.MainActivity">
 
     <Button
         android:id="@+id/reset"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerVertical="true"
-            android:onClick="resetScore"
-            android:text="Reset"
-            android:layout_marginBottom="32dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="32dp"
+        android:onClick="resetScore"
+        android:text="@string/resetBtn" />
 
     <LinearLayout
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        tools:context="com.example.android.courtcounter.MainActivity"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -36,20 +36,17 @@
                 android:id="@+id/team_a_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
-            <EditText
-                android:id="@+id/team_a_name"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:padding="16dp"
-                android:hint="Enter First Team Name"
-                android:onClick="setTeamAName"
-                android:textSize="10sp"
                 android:text="@string/team_a_name_text"
                 android:textColor="#616161"
-                android:fontFamily="sans-serif-medium"/>
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -58,25 +55,25 @@
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="center"
                     android:padding="4dp"
-                    android:text="Points"
-                    android:layout_marginBottom="16dp"
-                    android:textColor="#000000"
-                    android:fontFamily="sans-serif-light"/>
+                    android:text="@string/Score"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="center"
                     android:padding="4dp"
-                    android:text="Fouls"
-                    android:layout_marginBottom="16dp"
-                    android:textColor="#000000"
-                    android:fontFamily="sans-serif-light"/>
+                    android:text="@string/fouls"
+                    android:textColor="#000000" />
 
             </LinearLayout>
 
@@ -88,28 +85,28 @@
                 <TextView
                     android:id="@+id/team_a_score"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="center"
                     android:padding="4dp"
                     android:text="@string/team_a_score"
-                    android:layout_marginBottom="16dp"
-                    android:textSize="40sp"
                     android:textColor="#000000"
-                    android:fontFamily="sans-serif-light"/>
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/team_a_foul"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="center"
                     android:padding="4dp"
                     android:text="@string/team_a_foul"
-                    android:layout_marginBottom="16dp"
-                    android:textSize="40sp"
                     android:textColor="#000000"
-                    android:fontFamily="sans-serif-light"/>
+                    android:textSize="40sp" />
 
             </LinearLayout>
 
@@ -118,39 +115,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="4dp"
+                android:paddingLeft="0dp"
+                android:paddingStart="45dp"
                 android:text="@string/team_a_penalty"
-                android:textColor="#000000"/>
+                android:textColor="#000000" />
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                style="@style/CustomButtonStyle"
                 android:onClick="pointForTeamA"
-                android:text="Add Point"
-                android:textAllCaps="false"/>
+                android:text="@string/ScoreText" />
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                style="@style/CustomButtonStyle"
                 android:onClick="foulForTeamA"
-                android:text="Add Foul"
-                android:textAllCaps="false"/>
+                android:text="@string/FoulText" />
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                style="@style/CustomButtonStyle"
                 android:onClick="penaltyForTeamA"
-                android:text="Add Penalty"
-                android:textAllCaps="false"/>
+                android:text="@string/penaltyText" />
 
         </LinearLayout>
 
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"/>
+            android:background="@android:color/darker_gray" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -162,20 +152,17 @@
                 android:id="@+id/team_b_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
-            <EditText
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:padding="16dp"
-                android:hint="Enter Second Team Name"
-                android:onClick="setTeamBName"
-                android:textSize="10sp"
                 android:text="@string/team_b_name_text"
                 android:textColor="#616161"
-                android:fontFamily="sans-serif-medium"
-                android:id="@+id/team_b_name" />
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -183,28 +170,27 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/textView"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="center"
                     android:padding="4dp"
-                    android:text="Points"
-                    android:layout_marginBottom="16dp"
-                    android:textColor="#000000"
-                    android:fontFamily="sans-serif-light"
-                    android:id="@+id/textView" />
+                    android:text="@string/Score"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="center"
                     android:padding="4dp"
-                    android:text="Fouls"
-                    android:layout_marginBottom="16dp"
-                    android:textColor="#000000"
-                    android:fontFamily="sans-serif-light"/>
-
+                    android:text="@string/fouls"
+                    android:textColor="#000000" />
 
             </LinearLayout>
 
@@ -216,28 +202,28 @@
                 <TextView
                     android:id="@+id/team_b_score"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="center"
                     android:padding="4dp"
                     android:text="@string/team_b_score"
-                    android:layout_marginBottom="16dp"
-                    android:textSize="40sp"
                     android:textColor="#000000"
-                    android:fontFamily="sans-serif-light"/>
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/team_b_foul"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="center"
                     android:padding="4dp"
                     android:text="@string/team_b_foul"
-                    android:layout_marginBottom="16dp"
-                    android:textSize="40sp"
                     android:textColor="#000000"
-                    android:fontFamily="sans-serif-light"/>
+                    android:textSize="40sp" />
 
             </LinearLayout>
 
@@ -246,34 +232,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="4dp"
+                android:paddingLeft="0dp"
+                android:paddingStart="45dp"
                 android:text="@string/team_b_penalty"
-                android:textColor="#000000"/>
+                android:textColor="#000000" />
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                style="@style/CustomButtonStyle"
                 android:onClick="pointForTeamB"
-                android:text="Add Point"
-                android:textAllCaps="false"/>
+                android:text="@string/ScoreText" />
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                style="@style/CustomButtonStyle"
                 android:onClick="foulForTeamB"
-                android:text="Add Foul"
-                android:textAllCaps="false"/>
+                android:text="@string/FoulText" />
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                style="@style/CustomButtonStyle"
                 android:onClick="penaltyForTeamB"
-                android:text="Add Penalty"
-                android:textAllCaps="false"/>
+                android:text="@string/penaltyText" />
 
         </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

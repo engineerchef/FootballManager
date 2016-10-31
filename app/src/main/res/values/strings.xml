@@ -1,15 +1,24 @@
 <resources>
     <string name="app_name">Football Manager</string>
 
+    //Global Texts
+    <string name="penaltyText">Add Penalty</string>
+    <string name="FoulText">Add Foul</string>
+    <string name="ScoreText">Add Point</string>
+    <string name="resetBtn">Reset All</string>
+    <string name="fouls">Fouls</string>
+    <string name="Score">Points</string>
+
     //Team A strings
     <string name="team_a_score">0</string>
     <string name="team_a_foul">0</string>
     <string name="team_a_penalty">0</string>
+    <string name="team_a_name_text">Team A</string>
+
 
     //Team B strings
     <string name="team_b_score">0</string>
     <string name="team_b_foul">0</string>
     <string name="team_b_penalty">0</string>
-    <string name="team_a_name_text"></string>
-    <string name="team_b_name_text"></string>
+    <string name="team_b_name_text">Team B</string>
 </resources>

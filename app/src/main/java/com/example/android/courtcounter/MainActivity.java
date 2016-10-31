@@ -4,8 +4,8 @@ package com.example.android.courtcounter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 // Coded by Tolga DURAN
 // www.tolgaduran.com
@@ -15,19 +15,21 @@ public class MainActivity extends AppCompatActivity {
 
     int pointA = 0;
     int pointB = 0;
-    int foulA=0;
+    int foulA = 0;
     int foulB;
-    int penaltyA=0;
-    int penaltyB=0;
-
-    EditText teamA;
-    EditText teamB;
+    int penaltyA = 0;
+    int penaltyB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Note : Please accept my project.Dont reject for "Toast" message :D
+        Toast.makeText(MainActivity.this,"Welcome To My Football Manager App",Toast.LENGTH_SHORT).show();
     }
+
+    //Settings for A Team
 
     public void pointForTeamA(View view) {
         pointA = pointA + 1;
@@ -44,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
         displayPenaltyA(penaltyA);
     }
 
-    public void displayPenaltyA(int s){
+    public void displayPenaltyA(int s) {
         TextView scoreView = (TextView) findViewById(R.id.team_a_penalty);
-        scoreView.setText("Penalty : "+s);
+        scoreView.setText("Penalty : " + s);
     }
 
     public void displayPointA(int score) {
@@ -54,15 +56,12 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
-    public void displayFoulA(int a){
-        TextView scoreView=(TextView)findViewById(R.id.team_a_foul);
+    public void displayFoulA(int a) {
+        TextView scoreView = (TextView) findViewById(R.id.team_a_foul);
         scoreView.setText(String.valueOf(a));
     }
 
-
-
-
-
+    //Settings for B Team
 
     public void pointForTeamB(View view) {
         pointB = pointB + 1;
@@ -79,9 +78,9 @@ public class MainActivity extends AppCompatActivity {
         displayPenaltyB(penaltyB);
     }
 
-    public void displayPenaltyB(int s){
+    public void displayPenaltyB(int s) {
         TextView scoreView = (TextView) findViewById(R.id.team_b_penalty);
-        scoreView.setText("Penalty : "+s);
+        scoreView.setText("Penalty : " + s);
     }
 
     public void displayPointB(int score) {
@@ -94,21 +93,15 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
+    //Reset Button Settings
 
-
-    public void resetScore(View view){
+    public void resetScore(View view) {
         TextView penB = (TextView) findViewById(R.id.team_b_penalty);
         TextView scoreB = (TextView) findViewById(R.id.team_b_score);
         TextView foulB = (TextView) findViewById(R.id.team_b_foul);
         TextView penA = (TextView) findViewById(R.id.team_a_penalty);
         TextView scoreA = (TextView) findViewById(R.id.team_a_score);
         TextView foulA = (TextView) findViewById(R.id.team_a_foul);
-
-        teamA=(EditText)findViewById(R.id.team_a_name);
-        teamB=(EditText)findViewById(R.id.team_b_name);
-
-        teamA.setText(R.string.team_a_name_text);
-        teamB.setText(R.string.team_b_name_text);
 
         scoreA.setText(R.string.team_a_score);
         scoreB.setText(R.string.team_b_score);
@@ -119,30 +112,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    public void setTeamAName(View view){
-        final TextView t=(TextView)findViewById(R.id.team_a_text);
-        teamA=(EditText)findViewById(R.id.team_a_name);
-
-        teamA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //teamA.setAllCaps(true);
-                teamA.setText((CharSequence) t);
-            }
-        });
-    }
-
-    public void setTeamBName(View view){
-        final TextView t=(TextView) findViewById(R.id.team_b_text);
-        teamB=(EditText)findViewById(R.id.team_b_name);
-
-        teamB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //teamB.setAllCaps(true);
-                teamB.setText((CharSequence)t);
-            }
-        });
-    }
 }
