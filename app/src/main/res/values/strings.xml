@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Football Manager</string>
+
+    //Team A strings
+    <string name="team_a_score">0</string>
+    <string name="team_a_foul">0</string>
+    <string name="team_a_penalty">0</string>
+
+    //Team B strings
+    <string name="team_b_score">0</string>
+    <string name="team_b_foul">0</string>
+    <string name="team_b_penalty">0</string>
+    <string name="team_a_name_text"></string>
+    <string name="team_b_name_text"></string>
+</resources>
