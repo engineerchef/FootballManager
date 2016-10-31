@@ -4,6 +4,7 @@ package com.example.android.courtcounter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,24 +14,25 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int pointA = 0;
+    public int pointA = 0;
     int pointB = 0;
     int foulA = 0;
-    int foulB;
+    int foulB = 0;
     int penaltyA = 0;
     int penaltyB = 0;
+
+    EditText teamA;
+    EditText teamB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Note : Please accept my project.Dont reject for "Toast" message :D
-        Toast.makeText(MainActivity.this,"Welcome To My Football Manager App",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Welcome to my Football Manager Applicaion!!!", Toast.LENGTH_SHORT).show();
     }
 
-    //Settings for A Team
-
+    //Team A Settings
     public void pointForTeamA(View view) {
         pointA = pointA + 1;
         displayPointA(pointA);
@@ -61,8 +63,7 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(a));
     }
 
-    //Settings for B Team
-
+    //Team B Settings
     public void pointForTeamB(View view) {
         pointB = pointB + 1;
         displayPointB(pointB);
@@ -93,23 +94,56 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
-    //Reset Button Settings
-
+    //Reset Button
     public void resetScore(View view) {
-        TextView penB = (TextView) findViewById(R.id.team_b_penalty);
-        TextView scoreB = (TextView) findViewById(R.id.team_b_score);
-        TextView foulB = (TextView) findViewById(R.id.team_b_foul);
-        TextView penA = (TextView) findViewById(R.id.team_a_penalty);
-        TextView scoreA = (TextView) findViewById(R.id.team_a_score);
-        TextView foulA = (TextView) findViewById(R.id.team_a_foul);
+        //Reset Team Names
+        EditText tA = (EditText) findViewById(R.id.team_a_name);
+        EditText tB = (EditText) findViewById(R.id.team_b_name);
 
-        scoreA.setText(R.string.team_a_score);
-        scoreB.setText(R.string.team_b_score);
-        foulA.setText(R.string.team_a_foul);
-        foulB.setText(R.string.team_b_foul);
-        penA.setText(R.string.team_a_penalty);
-        penB.setText(R.string.team_b_penalty);
+        tA.setText(R.string.team_a_name_text);
+        tB.setText(R.string.team_b_name_text);
 
+        //Define Other Values---------------------------------------
+
+        pointA = 0;
+        pointB = 0;
+        foulA = 0;
+        foulB = 0;
+        penaltyA = 0;
+        penaltyB = 0;
+
+        displayPointA(pointA);
+        displayFoulA(foulA);
+        displayPenaltyA(penaltyA);
+        displayPointB(pointB);
+        displayFoulB(foulB);
+        displayPenaltyB(penaltyB);
     }
 
+    //EditText Settings
+    public void setTeamAName(View view) {
+        final TextView t = (TextView) findViewById(R.id.team_a_text);
+        teamA = (EditText) findViewById(R.id.team_a_name);
+
+        teamA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //teamA.setAllCaps(true);
+                teamA.setText((CharSequence) t);
+            }
+        });
+    }
+
+    public void setTeamBName(View view) {
+        final TextView t = (TextView) findViewById(R.id.team_b_text);
+        teamB = (EditText) findViewById(R.id.team_b_name);
+
+        teamB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //teamB.setAllCaps(true);
+                teamB.setText((CharSequence) t);
+            }
+        });
+    }
 }
